@@ -54,6 +54,13 @@ hint: https://ru.wikihow.com/%D0%B2%D1%8B%D1%81%D1%87%D0%B8%D1%82%D1%8B%D0%B2%D0
 """
 
 # Замените это своим кодом
+year = int(input("Введите год: "))
+
+if (year % 400 == 0) or (year % 4 == 0 and year % 100 != 0):
+    print(f"{year} — високосный год")
+else:
+    print(f"{year} — не високосный год")
+
 
 """
  _____         _        ___ 
@@ -69,6 +76,13 @@ hint: https://letpy.com/handbook/builtins/reversed/
 """
 
 # Замените это своим кодом
+s = input("Введите строку или число: ")
+
+if s == s[::-1]:
+    print(f"'{s}' — палиндром")
+else:
+    print(f"'{s}' — не палиндром")
+
 
 """
  _____         _      _____ 
@@ -84,6 +98,14 @@ hint: https://ru.wikipedia.org/wiki/%D0%A4%D0%B0%D0%BA%D1%82%D0%BE%D1%80%D0%B8%D
 """
 
 # Замените это своим кодом
+n = int(input("Введите число для вычисления факториала: "))
+factorial = 1
+
+for i in range(2, n + 1):
+    factorial *= i
+
+print(f"Факториал числа {n} равен {factorial}")
+
 
 """
  _____         _       ____ 
@@ -100,6 +122,21 @@ hint 2: %
 """
 
 # Замените это своим кодом
+num = int(input("Введите число: "))
+
+if num <= 1:
+    print(f"{num} — не простое число")
+else:
+    is_prime = True
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            is_prime = False
+            break
+    if is_prime:
+        print(f"{num} — простое число")
+    else:
+        print(f"{num} — не простое число")
+
 
 """
  _____         _      ______
@@ -115,6 +152,15 @@ hint: циклы
 """
 
 # Замените это своим кодом
+number = input("Введите число: ")
+total = 0
+
+for digit in number:
+    if digit.isdigit():
+        total += int(digit)
+
+print(f"Сумма цифр числа {number} равна {total}")
+
 
 """
  _____         _      _____ 
@@ -131,6 +177,18 @@ hint 2: попробуйте решить с помощью рекурсии
 """
 
 # Замените это своим кодом
+n = int(input("Введите количество элементов последовательности Фибоначчи: "))
+
+fib = [1, 1]
+if n == 1:
+    fib = [1]
+elif n == 0:
+    fib = []
+
+while len(fib) < n:
+    fib.append(fib[-1] + fib[-2])
+
+print("Последовательность Фибоначчи:", fib)
 
 
 
